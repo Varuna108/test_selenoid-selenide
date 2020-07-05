@@ -1,17 +1,21 @@
 package helpers;
 
 import com.codeborne.selenide.Selenide;
+import com.google.common.io.Files;
 import io.qameta.allure.Attachment;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static helpers.Environment.selenoid_url;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
@@ -46,6 +50,7 @@ public class AttachmentsHelper {
                 + videoUrl
                 + "' type='video/mp4'></video></body></html>";
     }
+
 
     public static String getVideoUrl() {
         try {
